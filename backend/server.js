@@ -5,6 +5,8 @@ import connectMongoDB from "./db/connectMongoose.db.js";
 dotenv.config();
 
 import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
+
 
 const app = express();
 const PORT= process.env.PORT ||5000;
@@ -14,6 +16,7 @@ app.use(express.json()); //it is used as a middelware to take care of requestsss
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use("/api/auth",authRoutes);
+app.use("/api/users",userRoutes);
 app.listen(PORT,()=>{
     console.log(`server is runnning ${PORT}`);
     connectMongoDB();

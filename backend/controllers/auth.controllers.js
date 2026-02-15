@@ -1,5 +1,6 @@
 import User from "../models/user.models.js"
 import bcrypt from "bcryptjs";
+import {v2 as cloudinary} from 'cloudinary';
 import { generateTokenAndSetCookie } from "../lib/utils/generateToken.js";
 export const signup=async (req,res)=>{
     try {
@@ -109,3 +110,4 @@ export const getMe=async(req,res)=>{
     }
      
 }
+
