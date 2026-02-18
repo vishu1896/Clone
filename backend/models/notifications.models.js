@@ -23,8 +23,4 @@ const notificationSchema = new mongoose.Schema({
     }},{timestamps:true});
 const Notification = mongoose.model('Notification',notificationSchema);
 export default Notification;
-//i dont know why we make models 
-//but we have two types of model notifications and the user model
-//these are the two types of model which we have made
-//u have to put notifications alsoo
-//try u can do this
+
