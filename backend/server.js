@@ -16,7 +16,7 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
-app.use(express.json()); //it is used as a middelware to take care of requestsssssss
+app.use(express.json({limit:"5mb"})); //it is used as a middelware to take care of requestsssssss
 //second middleware hain and it is for ......-->postman
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
