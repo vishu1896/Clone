@@ -76,7 +76,7 @@ export const getSuggestedUsers =async (req,res) =>{
                 }},
             {$sample:{size:10}}
         ])
-        const fillteredUsers = users.filter(user=>!userFollowedByMe.following.inclues(user._id));
+        const fillteredUsers = users.filter(user=>!userFollowedByMe.following.includes(user._id));
         const suggestedUsers = fillteredUsers.slice(0,4)
         suggestedUsers.forEach(user=>user.password=null)
         res.status(200).json(suggestedUsers);

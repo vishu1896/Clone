@@ -20,14 +20,14 @@ export const createPost = async (req , res)=>{
             const uploadedResponse = await cloudinary.uploader.upload(img);
             img = uploadedResponse.secure_url || uploadedResponse.url;
         }
-        //our model have passed all the if checks 
+       
         const newPost = new Post({
             user:userId,
             text,
             img
         })
         await newPost.save();
-        //we will give a res the user is made succesfully...
+        
         res.status(201).json(newPost);
 
     } catch (error) {
